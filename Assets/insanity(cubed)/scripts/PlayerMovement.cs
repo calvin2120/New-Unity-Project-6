@@ -15,11 +15,16 @@ public class PlayerMovement : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		input = new Vector3 (Input.GetAxisRaw ("Horizontal"), 0, Input.GetAxisRaw ("Vertical"));
+
+		
+	}
+
+	// put your physics stuff here
+	void FixedUpdate(){
 		if (rigidbody.velocity.magnitude < maxSpeed) 
 			
 		{
 			rigidbody.AddForce (input * moveSpeed);
 		}
-		
 	}
 }
